@@ -1,15 +1,14 @@
 //console.log("Working");
 
-//document.querySelector('form').addEventListener('submit', handleSubmit)
-
-
 
 const init = () => {
     const inputForm = document.querySelector("form");
   
     inputForm.addEventListener("submit", (e) => {
+        //prevent auto-refresh on submit
       e.preventDefault();
-      console.log(e);
+
+    //console.log(e);
       let newCard = {
         name: e.target.name.value,
         image: e.target.image.value,
@@ -19,8 +18,14 @@ const init = () => {
     }
     renderAllCards(newCard)
     addNewCard(newCard)
+    clearForm(newCard)
+
 })}
     
+function clearForm(newCard) {
+    let formInfo = document.getElementById('form')
+    formInfo.reset(newCard)
+}
   
   
   document.addEventListener("DOMContentLoaded", init);
@@ -37,6 +42,7 @@ function renderAllCards(card){
     <img src="${card.image}">
     <div class="content">
     <p>Name: ${card.name}</p>
+    <p>ID: ${card.id}</p>
     <p>Attack: ${card.attack}</p>
     <p>Defense: ${card.defense}</p>
     <p>Description: 
@@ -74,7 +80,7 @@ function getAllCards(){
 
 
     function addNewCard(newCard) {
-        console.log(JSON.stringify(newCard))
+        (JSON.stringify(newCard))
     fetch('http://localhost:3000/yugioh', {
         method: 'POST',
         headers: {
@@ -83,7 +89,7 @@ function getAllCards(){
         body:JSON.stringify(newCard)
     })
     .then(res => res.json())
-    
+
     }
     
 
@@ -106,142 +112,3 @@ function getAllCards(){
     }
     
     
-    
-
-
-
-
-
-
-
-
-// //event listeners
-// viewCollection.addEventListener('click', fetchCards)
-// newCard.addEventListener('click', createNewCard)
-
-// function fetchCards () {
-// // fetch("http://localhost:3000/yugioh/")
-// //   .then(function (response) {
-// //     console.log(response);
-// //     return response.json();
-// //   })
-// //   .then(function (data) {
-// //     console.log(data);
-// //   });
-
-// // function fetchCards(){
-// //     fetch (baseURL)
-// //     .then (res=>res.json())
-//     // .then (pagerefresh())
-//     // .then(data=>data.forEach(card=>renderOneCard(card)))    
-// }
-
-// //function to renderOneCard
-// function renderOneCard(cardObj){
-//     const card = document.createElement('ul')
-//     card.id = `${cardObj.id}`
-//     card.className='card'
-//     card.innerHTML=`
-//     <img src="${cardObj.image}" class="card-pic" />
-//     <div class="card-info">
-//         <p>${cardObj.name}</p>
-         
-//     <div class="card-buttons">
-        
-//         <button id ="buyout" class="waves-effect waves-light btn red accent-4">Purchase For:$<span class="current-bid">${cardObj.price}</span></button>
-//     `
-//     main.appendChild(card)
-   
-//     card.querySelector('#buyout').addEventListener('click', (event)=>{
-//         console.log(event)
-//         card.remove()
-//         deleteCard(cardObj)
-//     })
-// }
-
-
-// //function to submit new card
-// function createNewCard(){
-//     pagerefresh()
-//     const form = document.createElement('form')
-//     form.id = 'addCardForm'
-//     form.innerHTML= `
-//         <h3>Submit your own card for Auction</h3>
-
-//         <input
-//           type="text"
-//           name="name"
-//           value=""
-//           placeholder="Enter Card Name..."
-//           class="input-text"
-//         />
-//         <br />
-//         <input
-//           type="text"
-//           name="image"
-//           value=""
-//           placeholder="Enter Card Image URL..."
-//           class="input-text"
-//         />
-//         <br />
-//         <input
-//           type="text"
-//           name="edition"
-//           value=""
-//           placeholder="Enter Edition..."
-//           class="input-text"
-//         />
-//         <br />
-//         <input
-//           type="text"
-//           name="cardNumber"
-//           value=""
-//           placeholder="Enter Card Number..."
-//           class="input-text"
-//         />
-//         <br />
-//         <input
-//           type="text"
-//           name="price"
-//           value=""
-//           placeholder="Enter Buyout Price..."
-//           class="input-text"
-//         />
-//         <br />
-//         <button id ="submitCard" class="waves-effect waves-light btn blue accent-1">Submit Card </button>
-//     `
-//     main.appendChild(form)
-//     document.querySelector('form').addEventListener('submit', newCardObj)
-// }
-
-// function newCardObj(e){
-//     e.preventDefault()
-//     let newCardObj={
-//         name:e.target.name.value,
-//         image:e.target.image.value,
-//         price:e.target.price.value,
-              
-//     }
-//     renderOneCard(newCardObj)
-//     postNewCard(newCardObj)
-//     document.querySelector('form').reset()
-// }
-
-// //funtion to post new cards to db
-// function postNewCard(newCardObj){
-//     fetch (baseURL,{
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body:JSON.stringify(newCardObj)
-//     })
-//     .then(res=>res.json())
-//     .then(card=>console.log(card))
-//   }
-
-
-
-
-// // function to delete card from db
-
