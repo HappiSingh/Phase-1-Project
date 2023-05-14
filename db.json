@@ -9,6 +9,7 @@
         "defense": "2500",
         "category": "Monster",
         "favorited": false
+        
       },
       {
         "id": 2,
@@ -19,6 +20,7 @@
         "defense": "2100",
         "category": "Monster",
         "favorited": false
+        
       },
       {
         "id": 3,
@@ -29,6 +31,7 @@
         "defense": "2200",
         "category": "Monster",
         "favorited": false
+        
       },
       {
         "id": 4,
@@ -49,6 +52,7 @@
         "defense": "1200",
         "category": "Monster",
         "favorited": false
+        
       }
     ]
 }

@@ -4,55 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     
-    <title>Phase_1_Project</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"></script>
+  
+    
+    <title>YuGiOh</title>
 </head>
 
+
 <body>
+  <header id="menu">
+    <h1>Yu-Gi-Oh</h1>
+  </header>
+    <div class="container">
+      <form id="animal-form">
 
-    <div id="bannerContainer">
-    <div id="errorBanner"></div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="name">Image URL</label>
+        <input type="text" id="image_url" name="image_url">
+        
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="2"></textarea>
+        <button type="submit">Add Card</button>
+      </form>
+
+        
+        <ul id="animal-lst" class="cards">
+        
+        
+        </ul>
     </div>
-
-    <div id="headerConatiner">
-        <h1>Yu-Gi-Oh</h1>
-    </div>
-
-    <div id="imgContainer">
-        <div class="image"></div>
-    </div>
-
-    <div id="menuContainer">
-        <button class="selectMenu" id="input"> New Entry </button>
-        <button class="selectMenu" id="watched"> Watched List </button>
-        <button class="selectMenu" id="favlist"> Favorites </button>
-    </div>
-
-    <div id="displayContainer">
-
-        <form id="formContainer">
-            <input type="text" id="Image" placeholder="Image">
-            <input type="text" id="Title" placeholder="Image">
-            <input type="text" id="Episodes" placeholder="Image">
-            <input type="text" id="Airing" placeholder="Image">
-            <input type="text" id="Synopsis" placeholder="Image">
-            <button class=text id="submit"> Submit </button>
-        </form>
-
-        <div id="watchedContainer">
-
-        </div>
-
-
-        <div id="footerContiner">
-            <footer id="footer">
-                <small> &copy; 2023 </small>
-            </footer>
-        </div>
-
-    </div>
-
-    <script src="index.js"></script>
+    
 </body>
 </html>
+
