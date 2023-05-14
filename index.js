@@ -1,45 +1,64 @@
 //console.log("Working");
 
-function renderAllCards(){
+
+//DOM Render Functions
+function renderAllCards(animal){
+    //Build animal
     let card = document.createElement('li');
     card.className = 'card';
     card.innerHTML = ` 
     <img src="${animal.image}">
     <div class="content">
-    <p>${animal.name}</p>
-    <p>${animal.category}</p>
-    <p>${animal.attack}</p>
-    <p>${animal.defense}</p>
-    <p>${animal.description}</p>
-    
+    <p>Name: ${animal.name}</p>
+    <p>Category: ${animal.category}</p>
+    <p>Attack: ${animal.attack}</p>
+    <p>Defense: ${animal.defense}</p>
+    <p>Description: 
+    ${animal.description}</p>
+    </div>
+    <div class="buttons">
+    <button> Favorite </button>
+    <button> Remove </button>
+    </div>
     `
-    
+    // Add to DOM
+    document.querySelector('#animal-list').appendChild(card);
 }
 
+//Fetch Request
+function getAllAnimals(){
+    fetch('http://localhost:3000/yugioh')
+    .then(res => res.json())
+    .then(animalData => animalData.forEach(animal => renderAllCards(animal)))
+    }
 
+    function init () {
+        getAllAnimals()
+    }
+    init();
 
 
 //base URL
 // const baseURL = 'http://localhost:3000/yugioh'
 
 //grab elements of document
-const main = document.getElementById('main')
-const viewCollection = document.getElementById('view')
-const newCard = document.getElementById('newCard')
+// const main = document.getElementById('main')
+// const viewCollection = document.getElementById('view')
+// const newCard = document.getElementById('newCard')
 
 
-//content load and page refresh
-document.addEventListener('DOMContentLoaded',()=>{
-    fetch("http://localhost:3000/yugioh")
-  .then(function (response) {
-    console.log(response);
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+// //content load and page refresh
+// document.addEventListener('DOMContentLoaded',()=>{
+//     fetch("http://localhost:3000/yugioh")
+//   .then(function (response) {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     console.log(data);
+//   });
    
-})
+// })
 
 // function pagerefresh(){
 //     main.innerHTML = ''
