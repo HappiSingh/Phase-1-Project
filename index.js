@@ -53,8 +53,8 @@ function renderAllCards(card) {
 
   // Click event listener on the remove button
   li.querySelector("#removeCard").addEventListener("click", () => {
-    li.remove();
     deleteCard(card.id);
+    li.remove();
   });
 
   // Adding the newly created card to the DOM
@@ -94,7 +94,7 @@ function deleteCard(id) {
     .then((data) => console.log(data));
 }
 
-
+//Starts the render of cards on site load
 function initialize() {
   getAllCards();
 }
