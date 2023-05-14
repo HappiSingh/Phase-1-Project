@@ -61,15 +61,16 @@ function renderAllCards(card) {
   document.querySelector("#card-list").appendChild(li);
 }
 
-//Fetch Request
 //Fetch's all cards and data in the json file
-// Uses forEach array method to render them one at a time
+//Uses forEach array method to fetch and render the data one at a time
 function getAllCards() {
   fetch("http://localhost:3000/yugioh")
     .then((res) => res.json())
     .then((cardData) => cardData.forEach((card) => renderAllCards(card)));
 }
 
+
+//Adding the new card entered from form to the db.json
 function addNewCard(newCard) {
   JSON.stringify(newCard);
   fetch("http://localhost:3000/yugioh", {
@@ -84,7 +85,6 @@ function addNewCard(newCard) {
 function initialize() {
   getAllCards();
 }
-
 initialize();
 
 function deleteCard(id) {
