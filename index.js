@@ -82,11 +82,7 @@ function addNewCard(newCard) {
   }).then((res) => res.json());
 }
 
-function initialize() {
-  getAllCards();
-}
-initialize();
-
+//Deletes the card from the db.json when user clicks remove
 function deleteCard(id) {
   fetch(`http://localhost:3000/yugioh/${id}`, {
     method: "DELETE",
@@ -97,3 +93,9 @@ function deleteCard(id) {
     .then((res) => res.json())
     .then((data) => console.log(data));
 }
+
+
+function initialize() {
+  getAllCards();
+}
+initialize();
