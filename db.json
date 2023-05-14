@@ -39,6 +39,14 @@
       "description": "A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.",
       "attack": "2500",
       "defense": "1200"
+    },
+    {
+      "id": 6,
+      "name": "Gravekeeper's Cannonholder",
+      "image": "https://images.ygoprodeck.com/images/cards/99877698.jpg",
+      "description": "You can Tribute 1 'Gravekeeper's monster, except 'Gravekeeper's Cannonholder'; inflict 700 damage to your opponent.",
+      "attack": "1400",
+      "defense": "1200"
     }
   ]
 }
