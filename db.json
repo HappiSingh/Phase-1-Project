@@ -1,0 +1,54 @@
+{
+    "yugioh": [
+      {
+        "id": 1,
+        "name": "Blue Eyes White Dragon",
+        "image": "https://images.ygoprodeck.com/images/cards/89631139.jpg",
+        "description": "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.",
+        "attack": "3000",
+        "defense": "2500",
+        "category": "Monster",
+        "favorited": false
+      },
+      {
+        "id": 2,
+        "name": "Dark Magician",
+        "image": "https://images.ygoprodeck.com/images/cards/46986414.jpg",
+        "description": "The ultimate wizard in terms of attack and defense.",
+        "attack": "2500",
+        "defense": "2100",
+        "category": "Monster",
+        "favorited": false
+      },
+      {
+        "id": 3,
+        "name": "Kaiser Glider",
+        "image": "https://images.ygoprodeck.com/images/cards/52824910.jpg",
+        "description": "Cannot be destroyed by battle with a monster that has the same ATK. If this card is destroyed and sent to the Graveyard: Target 1 monster on the field; return that target to the hand.",
+        "attack": "2400",
+        "defense": "2200",
+        "category": "Monster",
+        "favorited": false
+      },
+      {
+        "id": 4,
+        "name": "Giant Soldier of Stone",
+        "image": "https://images.ygoprodeck.com/images/cards/13039848.jpg",
+        "description": "A giant warrior made of stone. A punch from this creature has earth-shaking results.",
+        "attack": "1300",
+        "defense": "2000",
+        "category": "Monster",
+        "favorited": false
+      },
+      {
+        "id": 5,
+        "name": "Summoned Skull",
+        "image": "https://images.ygoprodeck.com/images/cards/70781052.jpg",
+        "description": "A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.",
+        "attack": "2500",
+        "defense": "1200",
+        "category": "Monster",
+        "favorited": false
+      }
+    ]
+}
