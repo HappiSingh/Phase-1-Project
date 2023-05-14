@@ -2,19 +2,18 @@
 
 
 //DOM Render Functions
-function renderAllCards(animal){
+function renderAllCards(card){
     //Build animal
-    let card = document.createElement('li');
-    card.className = 'card';
-    card.innerHTML = ` 
-    <img src="${animal.image}">
+    let li = document.createElement('li');
+    li.className = 'card';
+    li.innerHTML = ` 
+    <img src="${card.image}">
     <div class="content">
-    <p>Name: ${animal.name}</p>
-    <p>Category: ${animal.category}</p>
-    <p>Attack: ${animal.attack}</p>
-    <p>Defense: ${animal.defense}</p>
+    <p>Name: ${card.name}</p>
+    <p>Attack: ${card.attack}</p>
+    <p>Defense: ${card.defense}</p>
     <p>Description: 
-    ${animal.description}</p>
+    ${card.description}</p>
     </div>
     <div class="buttons">
     <button> Favorite </button>
@@ -22,20 +21,22 @@ function renderAllCards(animal){
     </div>
     `
     // Add to DOM
-    document.querySelector('#animal-list').appendChild(card);
+    document.querySelector('#animal-list').appendChild(li);
 }
 
+
+
 //Fetch Request
-function getAllAnimals(){
+function getAllCards(){
     fetch('http://localhost:3000/yugioh')
     .then(res => res.json())
-    .then(animalData => animalData.forEach(animal => renderAllCards(animal)))
+    .then(cardData => cardData.forEach(card => renderAllCards(card)))
     }
 
-    function init () {
-        getAllAnimals()
-    }
-    init();
+    document.addEventListener("DOMContentLoaded", () => {
+        getAllCards()
+    })
+    
 
 
 //base URL
