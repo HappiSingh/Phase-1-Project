@@ -42,7 +42,6 @@ function renderAllCards(card){
     <img src="${card.image}">
     <div class="content">
     <p>Name: ${card.name}</p>
-    <p>ID: ${card.id}</p>
     <p>Attack: ${card.attack}</p>
     <p>Defense: ${card.defense}</p>
     <p>Description: 
