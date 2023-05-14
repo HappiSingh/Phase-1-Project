@@ -21,7 +21,7 @@ function renderAllCards(card){
     </div>
     `
     // Add to DOM
-    document.querySelector('#animal-list').appendChild(li);
+    document.querySelector('#card-list').appendChild(li);
 }
 
 
@@ -32,6 +32,38 @@ function getAllCards(){
     .then(res => res.json())
     .then(cardData => cardData.forEach(card => renderAllCards(card)))
     }
+
+    document.querySelector('#card-form').addEventListener('submit', handleSubmit)
+
+    function handleSubmit(e){
+        e.preventDefault();
+        let newCard = {
+            name: e.target.name.value,
+            image: e.target.image_url.value,
+            description: e.target.description.value,
+            attack: e.target.attack.value,
+            defense: e.target.defense.value
+        }
+        renderAllCards(newCard)
+        addNewCard(newCard)
+    }
+
+
+
+    function addNewCard(newCard) {
+        console.log(JSON.stringify(newCard))
+    // fetch('http://localhost:3000/yugioh', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body:JSON.stringify(newCard)
+    // })
+    // .then.then(res => res.json())
+    // .then(card => console.log(card))
+    }
+    
+
 
     document.addEventListener("DOMContentLoaded", () => {
         getAllCards()

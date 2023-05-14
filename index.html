@@ -14,25 +14,28 @@
 
 
 <body>
-  <header id="menu">
+  <header id="title">
     <h1>Yu-Gi-Oh</h1>
   </header>
     <div class="container">
-      <form id="animal-form">
+      <form id="card-form">
 
         <label for="name">Name</label>
         <input type="text" id="name" >
-        
         <label for="name">Image URL</label>
         <input type="text" id="image_url" >
-        
+        <label for="name">Attack Level</label>
+        <input type="text" id="attack" >
+        <label for="name">Defense Level</label>
+        <input type="text" id="defense" >
         <label for="description">Description</label>
         <textarea id="description" name="description" rows="2"></textarea>
+
         <button type="submit">Add Card</button>
       </form>
 
         
-        <ul id="animal-list" class="cards">
+        <ul id="card-list" class="cards">
         
         
         </ul>
