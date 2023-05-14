@@ -1,3 +1,4 @@
+
 // Submit event listener on the form's submit button
 // Will grab data in the form and add it to newCard
 
