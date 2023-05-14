@@ -24,18 +24,7 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", init);
 
 
-// function handleSubmit(e){
-//     e.preventDefault()
-//     let newCard = {
-//         name: e.target.name.value,
-//         image: e.target.image.value,
-//         description: e.target.description.value,
-//         attack: e.target.attack.value,
-//         defense: e.target.defense.value
-//     }
-//     renderAllCards(newCard)
-//     addNewCard(newCard)
-// }
+
 
 //DOM Render Functions
 function renderAllCards(card){
@@ -52,7 +41,6 @@ function renderAllCards(card){
     ${card.description}</p>
     </div>
     <div class="buttons">
-    <button> Favorite </button>
     <button> Remove </button>
     </div>
     `
