@@ -47,6 +47,14 @@
       "description": "You can Tribute 1 'Gravekeeper's monster, except 'Gravekeeper's Cannonholder'; inflict 700 damage to your opponent.",
       "attack": "1400",
       "defense": "1200"
+    },
+    {
+      "id": 7,
+      "name": "Meteo the Matchless",
+      "image": "https://images.ygoprodeck.com/images/cards/501000001.jpg",
+      "description": "This card cannot be Special Summoned. This card must be Tribute Summoned by offering 3 Beast-Warrior-Type monsters on your side of the field as Tributes. If this card attacks your opponent's Life Points directly and makes them 0, the controller of this card wins the Match.",
+      "attack": "2400",
+      "defense": "2000"
     }
   ]
 }
