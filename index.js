@@ -1,5 +1,31 @@
 //console.log("Working");
 
+document.querySelector('form').addEventListener('submit', handleSubmit)
+
+// const init = () => {
+//     const inputForm = document.querySelector("form");
+  
+//     inputForm.addEventListener("submit", (event) => {
+//       event.preventDefault();
+//       console.log(event);
+//     });
+//   };
+  
+//   document.addEventListener("DOMContentLoaded", init);
+
+
+function handleSubmit(e){
+    e.preventDefault()
+    let newCard = {
+        name: e.target.name.value,
+        image: e.target.image.value,
+        description: e.target.description.value,
+        attack: e.target.attack.value,
+        defense: e.target.defense.value
+    }
+    renderAllCards(newCard)
+    addNewCard(newCard)
+}
 
 //DOM Render Functions
 function renderAllCards(card){
@@ -33,41 +59,31 @@ function getAllCards(){
     .then(cardData => cardData.forEach(card => renderAllCards(card)))
     }
 
-    document.querySelector('#card-form').addEventListener('submit', handleSubmit)
-
-    function handleSubmit(e){
-        e.preventDefault();
-        let newCard = {
-            name: e.target.name.value,
-            image: e.target.image_url.value,
-            description: e.target.description.value,
-            attack: e.target.attack.value,
-            defense: e.target.defense.value
-        }
-        renderAllCards(newCard)
-        addNewCard(newCard)
-    }
+    
+    
 
 
 
     function addNewCard(newCard) {
         console.log(JSON.stringify(newCard))
-    // fetch('http://localhost:3000/yugioh', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body:JSON.stringify(newCard)
-    // })
-    // .then.then(res => res.json())
-    // .then(card => console.log(card))
+    fetch('http://localhost:3000/yugioh', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(newCard)
+    })
+    .then(res => res.json())
+    
     }
     
 
 
-    document.addEventListener("DOMContentLoaded", () => {
+    function initialize(){
         getAllCards()
-    })
+    };
+
+    initialize();
     
 
 
