@@ -1,5 +1,6 @@
-//console.log("Working");
 
+// Submit event listener on the form's submit button
+// Will grab data in the form and add it to newCard
 
 const init = () => {
     const inputForm = document.querySelector("form");
@@ -19,16 +20,19 @@ const init = () => {
     renderAllCards(newCard)
     addNewCard(newCard)
     clearForm(newCard)
-
 })}
+
+// Event listener to wait till DOM loads to run any submits/new card additions
+document.addEventListener("DOMContentLoaded", init);
     
+
+// Clearing the form after submit is clicked
 function clearForm(newCard) {
     let formInfo = document.getElementById('form')
     formInfo.reset(newCard)
 }
   
-  
-  document.addEventListener("DOMContentLoaded", init);
+
 
 
 
