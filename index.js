@@ -1,22 +1,14 @@
 //console.log("Working");
 
-document.querySelector('form').addEventListener('submit', handleSubmit)
+//document.querySelector('form').addEventListener('submit', handleSubmit)
 
-// const init = () => {
-//     const inputForm = document.querySelector("form");
+const init = () => {
+    const inputForm = document.querySelector("form");
   
-//     inputForm.addEventListener("submit", (event) => {
-//       event.preventDefault();
-//       console.log(event);
-//     });
-//   };
-  
-//   document.addEventListener("DOMContentLoaded", init);
-
-
-function handleSubmit(e){
-    e.preventDefault()
-    let newCard = {
+    inputForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log(e);
+      let newCard = {
         name: e.target.name.value,
         image: e.target.image.value,
         description: e.target.description.value,
@@ -25,7 +17,25 @@ function handleSubmit(e){
     }
     renderAllCards(newCard)
     addNewCard(newCard)
-}
+})}
+    
+  
+  
+  document.addEventListener("DOMContentLoaded", init);
+
+
+// function handleSubmit(e){
+//     e.preventDefault()
+//     let newCard = {
+//         name: e.target.name.value,
+//         image: e.target.image.value,
+//         description: e.target.description.value,
+//         attack: e.target.attack.value,
+//         defense: e.target.defense.value
+//     }
+//     renderAllCards(newCard)
+//     addNewCard(newCard)
+// }
 
 //DOM Render Functions
 function renderAllCards(card){
