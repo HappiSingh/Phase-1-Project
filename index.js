@@ -2,6 +2,8 @@
 
 //document.querySelector('form').addEventListener('submit', handleSubmit)
 
+
+
 const init = () => {
     const inputForm = document.querySelector("form");
   
@@ -40,10 +42,19 @@ function renderAllCards(card){
     <p>Description: 
     ${card.description}</p>
     </div>
-    <div class="buttons">
-    <button> Remove </button>
+    <div>
+    <button id="removeCard"> Remove </button>
     </div>
     `
+
+    li.querySelector('#removeCard').addEventListener('click', () => {
+        li.remove();
+        deleteCard(card.id)
+    });
+
+
+
+
     // Add to DOM
     document.querySelector('#card-list').appendChild(li);
 }
@@ -83,33 +94,26 @@ function getAllCards(){
 
     initialize();
     
+    function deleteCard(id){
+        fetch(`http://localhost:3000/yugioh/${id}`,{
+            method: 'DELETE',
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+    }
+    
+    
+    
 
 
-//base URL
-// const baseURL = 'http://localhost:3000/yugioh'
-
-//grab elements of document
-// const main = document.getElementById('main')
-// const viewCollection = document.getElementById('view')
-// const newCard = document.getElementById('newCard')
 
 
-// //content load and page refresh
-// document.addEventListener('DOMContentLoaded',()=>{
-//     fetch("http://localhost:3000/yugioh")
-//   .then(function (response) {
-//     console.log(response);
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//   });
-   
-// })
 
-// function pagerefresh(){
-//     main.innerHTML = ''
-// }
+
+
 
 // //event listeners
 // viewCollection.addEventListener('click', fetchCards)
@@ -237,27 +241,7 @@ function getAllCards(){
 //   }
 
 
-// //function to update bids to db
-// // function updateBids(cardObj){
-// //     fetch(`${baseURL}${cardObj.id}`,{
-// //         method: 'PATCH',
-// //         headers:{
-// //             "Content-Type": 'application/json'
-// //         },
-// //         body:JSON.stringify(cardObj)
-// //     })
-// //     .then(res=>res.json())
-// //     .then(card=>console.log(card))
-// // }
+
 
 // // function to delete card from db
-// function deleteCard(cardObj){
-//     fetch(`${baseURL}${cardObj.id}`,{
-//         method: 'DELETE',
-//         headers:{
-//             'Content-Type':'application/json'
-//         }
-//     })
-//     .then(res=>res.json())
-//     .then(data=>console.log(data))
-// }
+

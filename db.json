@@ -39,14 +39,6 @@
       "description": "A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.",
       "attack": "2500",
       "defense": "1200"
-    },
-    {
-      "name": "Clown Zombie",
-      "image": "https://images.ygoprodeck.com/images/cards/92667214.jpg",
-      "description": "A clown revived by the powers of darkness. Its deadly dance has sent many monsters to their graves.",
-      "attack": "1350",
-      "defense": "0",
-      "id": 6
     }
   ]
 }
