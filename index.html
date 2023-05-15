@@ -8,43 +8,50 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./index.js"></script>
   
-    <title>YuGiOh</title>
+    <link rel="icon" type="image/x-icon" href="ezgif.com-webp-to-jpg.jpg">
+
+    <title>My Yu-Gi-Oh Collection</title>
 </head>
 
 
 <body>
   <header id="title">
-    <h1>My Yu-Gi-Oh Collection</h1>
+    <h1>    
+      <img src="Yugi.webp" width="50px" height="50px" alt="">
+      My Yu-Gi-Oh Collection
+    </h1>
   </header>
 
-    <div class="container">
-      <form id="form">
+  <div class="container">
 
+      <img src="Yugioh_Logo.webp" alt="Banner" class="banner">
+
+      <form id="form" autocomplete="off">
         <label for="name">Name</label>
-        <input type="text" id="name" >
+        <input type="text" id="name" placeholder="Enter the Card name">
         
         <label for="name">Image URL</label>
-        <input type="text" id="image" >
+        <input type="text" id="image" placeholder="Enter the Image URL">
         
         <label for="name">Attack Level</label>
-        <input type="text" id="attack" >
+        <input type="text" id="attack" placeholder="Enter the Attack Level">
         
         <label for="name">Defense Level</label>
-        <input type="text" id="defense" >
+        <input type="text" id="defense" placeholder="Enter the Defense Level">
         
         <label for="description">Description</label>
-        <textarea id="description" name="description" rows="2"></textarea>
+        <textarea id="description" name="description" rows="6" placeholder="Enter the card description"></textarea>
 
         <button type="submit" id="submit">Add Card</button>
+        <span id="error"></span>
       </form>
-
-        
-        <ul id="card-list" class="cards">
-        
-        
-        </ul>
+      
     </div>
     
+    <ul id="card-list" class="cards"></ul>
+
+    <footer>
+        <p>&copy; 2023 Harpreet Singh</p>
+    </footer>
 </body>
 </html>
-
