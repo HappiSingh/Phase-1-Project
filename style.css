@@ -169,3 +169,11 @@ footer p {
     color: white;
     margin-block: 5px;
 }
+
+@media only screen and (max-width: 2000px) {
+    .banner {
+        flex-basis: 50%;
+        height: auto;
+        width: 60%;
+    }
+}
